@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+import EStoreHeader from './components/layout/EStoreHeader';
+import EStoreSummary from './components/layout/EStoreSummary';
+import MerchList from './components/items/MerchList';
+import MusicList from './components/items/MusicList';
+import { Button, Container } from 'react-bootstrap';
+import EStoreFooter from './components/layout/EStoreFooter';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<React.Fragment>
+<EStoreHeader />
+<EStoreSummary />
+<MerchList />
+<EStoreFooter />
+
+</React.Fragment>
+    
   );
 }
 
