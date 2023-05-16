@@ -1,36 +1,34 @@
-import React,{ useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-import EStoreHeader from './components/layout/EStoreHeader';
-import EStoreSummary from './components/layout/EStoreSummary';
-import MerchList from './components/items/MerchList';
-// import MusicList from './components/items/MusicList';
-// import { Button, Container } from 'react-bootstrap';
-import EStoreFooter from './components/layout/EStoreFooter';
-import Cart from './components/Cart/Cart'
+import CartProvider from "./store/CartProvider";
+import EStoreHeader from "./components/layout/EStoreHeader";
+import EStoreSummary from "./components/layout/EStoreSummary";
+import Items from "./components/items/Items";
+import EStoreFooter from "./components/layout/EStoreFooter";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
-  const [cartShown, setCartIsShown] = useState(true);
+  const [cartShown, setCartIsShown] = useState(false);
 
-const ShowCartHandler = () => {
-  setCartIsShown(true);
-};
+  const ShowCartHandler = () => {
+    setCartIsShown(true);
+  };
 
-const HideCartHandler = () => {
-  setCartIsShown(false);
-};
+  const HideCartHandler = () => {
+    setCartIsShown(false);
+  };
   return (
-<React.Fragment>
-{cartShown && <Cart onClose={HideCartHandler}/>}
-<EStoreHeader onOpen={ShowCartHandler} />
-<EStoreSummary />
-<MerchList />
+    <CartProvider>
+      {cartShown && <Cart onClose={HideCartHandler} />}
+      <EStoreHeader onOpen={ShowCartHandler} />
+      <EStoreSummary />
+      <h1 className="text-center"> Merch</h1>
+      <Items onOpen={ShowCartHandler}/>
 
-<EStoreFooter />
-
-</React.Fragment>
-    
+      <EStoreFooter />
+    </CartProvider>
   );
-}
+};
 
 export default App;
