@@ -2,32 +2,23 @@ import React, { useContext } from "react";
 import { Container, Row, Col, Button, Table } from "react-bootstrap";
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
+import CartItem from "./CartItem";
 
 const Cart = (props) => {
-
-
   const cartElements = useContext(CartContext);
 
+  
   const cartitems = cartElements.items.map((elem) => (
-    <tr key={elem.id}>
-      <td>
-        <img src={elem.imgUrl} width={"75px"} alt="hello" />
-        <span style={{ margin: "1px 3px" }}>{elem.title}</span>
-      </td>
-      <td>
-        <h5>{elem.price}</h5>
-      </td>
-      <td>
-        <p
-          style={{ border: "solid", textAlign: "center", borderColor: "aqua" }}
-        >
-          {elem.quantity}
-        </p>
-        <Button variant="danger" size="m">
-          REMOVE
-        </Button>
-      </td>
-    </tr>
+    
+    <CartItem 
+    key={elem.id}
+    id={elem.id}
+    imgUrl={elem.imgUrl}
+    title={elem.title}
+    price={elem.price}
+    quantity={elem.quantity}
+    />
+    
     
   ));
 
@@ -61,7 +52,7 @@ const Cart = (props) => {
             <h3>Total</h3>
           </Col>
           <Col style={{ textAlign: "right" }}>
-            <h3>$37.97</h3>
+            <h3>Rs.{cartElements.totalAmount}</h3>
           </Col>
         </Row>
         <Row>

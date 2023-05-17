@@ -7,9 +7,9 @@ const EStoreSummary = () => {
       <Container
         fluid
         className="bg-secondary text-center"
-        style={{ backgroundColor: "grey" }}
+        style={{ backgroundColor: "grey",border:'2px solid',borderColor:'white' }}
       >
-        <h1 className="text-center">The Generics</h1>
+        <p style={{fontSize:'129px', color:'white'}} className="text-center">The Generics</p>
       </Container>
     </div>
   );
