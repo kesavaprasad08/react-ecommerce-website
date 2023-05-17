@@ -3,8 +3,9 @@ import { useState, useMemo } from "react";
 import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
-  console.log("hi");
+ 
   const [items, setItems] = useState([]);
+  
   const totalAmount = useMemo(
     () =>
       items.reduce(
@@ -16,7 +17,7 @@ const CartProvider = (props) => {
   );
 
   const addItemToCartHandler = (item) => {
-    console.log(item);
+   
     const itemIndex = items.findIndex((el) => el.id === item.id);
     if (itemIndex === -1) {
       setItems((prev) => [...prev, item]);
@@ -53,7 +54,7 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
-  console.log(items);
+
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
