@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const EStoreSummary = () => {
   return (
-    <div>
+    <>
       <Container
         fluid
         className="bg-secondary text-center"
@@ -11,7 +11,7 @@ const EStoreSummary = () => {
       >
         <p style={{fontSize:'129px', color:'white'}} className="text-center">The Generics</p>
       </Container>
-    </div>
+    </>
   );
 };
 
