@@ -15,6 +15,11 @@ function AboutPage() {
             <Link to="/store" style={{color:'white'}}>STORE</Link>
 
             <Link to="/about" style={{color:'white'}}>ABOUT</Link>
+           
+                <Link to="/contactus" style={{ color: "white" }}>
+                  Contact Us
+                </Link>
+              
           </Container>
         </Navbar>
       </header>

@@ -20,14 +20,25 @@ function StorePage(props) {
   return (
     <CartProvider>
       <header>
-        <Navbar style={{backgroundColor:'black'}} expand="sm" variant="dark">
+        <Navbar style={{ backgroundColor: "black" }} expand="sm" variant="dark">
           <Container>
-            <Link to="/" style={{color:'white'}}>HOME</Link>
+            <Link to="/" style={{ color: "white" }}>
+              HOME
+            </Link>
 
-            <Link to="/store" style={{color:'white'}}>STORE</Link>
+            <Link to="/store" style={{ color: "white" }}>
+              STORE
+            </Link>
 
-            <Link to="/about" style={{color:'white'}}>ABOUT</Link>
-            <HeaderCart onOpenCart={ShowCartHandler}/>
+            <Link to="/about" style={{ color: "white" }}>
+              ABOUT
+            </Link>
+
+            <Link to="/contactus" style={{ color: "white" }}>
+              Contact Us
+            </Link>
+
+            <HeaderCart onOpenCart={ShowCartHandler} />
           </Container>
         </Navbar>
       </header>
@@ -36,7 +47,7 @@ function StorePage(props) {
       <EStoreSummary />
       <h1 className="text-center"> Merch</h1>
       <Items onOpen={ShowCartHandler} />
-    
+
       <EStoreFooter />
     </CartProvider>
   );

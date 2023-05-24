@@ -1,0 +1,24 @@
+.ContactUs {
+    margin-top: 50px;
+    text-align: center;
+border: 1px solid;
+border-radius: 1%;
+width: 35%;
+background-color: rgb(255, 255, 234);
+
+}
+.items{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+label{
+    margin-right: 30px;
+}
+
+h1{
+    color: rgb(123, 123, 0)   ;
+    border-bottom: 2px solid grey;
+    
+
+}

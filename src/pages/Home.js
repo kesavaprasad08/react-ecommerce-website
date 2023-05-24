@@ -29,6 +29,13 @@ function HomePage() {
                 </Link>
               </li>
             </ul>
+            <ul>
+              <li>
+                <Link to="/contactus" style={{ color: "white" }}>
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
           </Container>
         </Navbar>
       </header>
