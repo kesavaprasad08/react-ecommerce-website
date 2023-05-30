@@ -7,10 +7,11 @@ function MainNavigation(props) {
   const cartCntx = useContext(CartContext);
 
   return (
+    <>
     <header>
       <Navbar bg="dark" expand="sm" variant="dark">
         <Container>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
 
           <Link to="/store">Store</Link>
 
@@ -21,6 +22,8 @@ function MainNavigation(props) {
         </Container>
       </Navbar>
     </header>
+    
+    </>
   );
 }
 

@@ -4,9 +4,11 @@ import Cart from "../components/Cart/Cart";
 import EStoreSummary from "../components/layout/EStoreSummary";
 import Items from "../components/items/Items";
 import EStoreFooter from "../components/layout/EStoreFooter";
-import { Container, Navbar } from "react-bootstrap";
+import { Container, NavLink, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HeaderCart from "../components/Cart/HeaderCart";
+import classes from './Store.module.css'
+import MainHeaer from "../components/MainHeader";
 
 function StorePage(props) {
   const [cartShown, setCartIsShown] = useState(false);
@@ -19,29 +21,30 @@ function StorePage(props) {
   };
   return (
     <CartProvider>
-      <header>
+      {/* <header>
         <Navbar style={{ backgroundColor: "black" }} expand="sm" variant="dark">
           <Container>
-            <Link to="/" style={{ color: "white" }}>
+            <NavLink activeClassName={classes.active} to="/" style={{ color: "white" }}>
               HOME
-            </Link>
+            </NavLink>
 
-            <Link to="/store" style={{ color: "white" }}>
+            <NavLink activeClassName={classes.active} to="/store" style={{ color: "white" }}>
               STORE
-            </Link>
+            </NavLink>
 
-            <Link to="/about" style={{ color: "white" }}>
+            <NavLink activeClassName={classes.active} to="/about" style={{ color: "white" }}>
               ABOUT
-            </Link>
+            </NavLink>
 
-            <Link to="/contactus" style={{ color: "white" }}>
+            <NavLink activeClassName={classes.active} to="/contactus" style={{ color: "white" }}>
               Contact Us
-            </Link>
+            </NavLink>
 
             <HeaderCart onOpenCart={ShowCartHandler} />
           </Container>
         </Navbar>
-      </header>
+      </header> */}
+      <MainHeaer/>
       {cartShown && <Cart onClose={HideCartHandler} />}
 
       <EStoreSummary />

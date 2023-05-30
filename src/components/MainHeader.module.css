@@ -1,0 +1,41 @@
+.header ul {
+    
+    display: flex;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 200;
+    justify-content: center;
+    list-style-type: none;
+    border-bottom: 0.1rem solid white;
+    position: fixed;
+    top: 0%;
+    background: black;
+    width: 100%;
+    z-index: 1;
+}
+nav{
+    justify-content: center;
+}
+.header li {
+    color: white;
+    margin: 0 1rem;
+    width: 5rem;
+}
+
+.header{
+    
+    background-color: black;
+    
+}
+header a{
+    
+    color: white;
+    text-decoration: none;
+}
+.header a:hover,
+.header a:active,
+.header a.active{
+    color: wheat;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid blue;
+}

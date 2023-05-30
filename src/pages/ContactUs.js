@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Button, Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import classes from "./ContactUs.module.css";
+import MainHeader from "../components/MainHeader";
 const ContactUs = () => {
   const NameRef = useRef();
   const EmailRef = useRef();
@@ -30,44 +31,11 @@ const ContactUs = () => {
 
   return (
     <>
-      <header>
-        <Navbar style={{ backgroundColor: "black" }} expand="sm" variant="dark">
-          <Container>
-            <ul>
-              <li>
-                <Link to="/" style={{ color: "white" }}>
-                  HOME
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/store" style={{ color: "white" }}>
-                  STORE
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/about" style={{ color: "white" }}>
-                  ABOUT
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/contactus" style={{ color: "white" }}>
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </Container>
-        </Navbar>
-      </header>
+      <MainHeader />
 
       <Container>
         <form className={classes.ContactUs}>
-          <h1>Enquiry</h1>
+          <h1 className={classes.aboutusheader}>Enquiry</h1>
           <div className={classes.items}>
             <label>Name</label>
             <input type="text" ref={NameRef}></input>

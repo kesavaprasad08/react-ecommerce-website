@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Col } from "react-bootstrap";
 import CartContext from "../../store/cart-context";
+import { Link } from "react-router-dom";
 
 const MerchList = (props) => {
   const cartCntx = useContext(CartContext);
@@ -16,8 +17,11 @@ const MerchList = (props) => {
   };
 
   return (
+
     <Col md={{ span: 3, offset: 5 }} className="mt-3">
+      
       <Col key={props.id}>
+      <Link to={`/store/${props.id}`}>
         <h5>{props.title}</h5>
         <img src={props.imageUrl} alt={props.title} width="200px" />
         <Col md={{ span: 3, offset: 0 }}>
@@ -26,7 +30,7 @@ const MerchList = (props) => {
             <span>{props.price}</span>
           </span>
         </Col>
-
+        </Link>
         <Col md={{ span: 7, offset: 2}}>
           <Button
             variant="info"

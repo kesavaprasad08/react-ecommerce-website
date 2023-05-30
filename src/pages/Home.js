@@ -1,44 +1,12 @@
 import { Button, Container, Navbar, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import EStoreFooter from "../components/layout/EStoreFooter";
+import MainHeader from "../components/MainHeader";
 
 function HomePage() {
   return (
     <>
-      <header>
-        <Navbar style={{ backgroundColor: "black" }} expand="sm" variant="dark">
-          <Container>
-            <ul>
-              <li>
-                <Link to="/" style={{ color: "white" }}>
-                  HOME
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/store" style={{ color: "white" }}>
-                  STORE
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/about" style={{ color: "white" }}>
-                  ABOUT
-                </Link>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link to="/contactus" style={{ color: "white" }}>
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </Container>
-        </Navbar>
-      </header>
+      <MainHeader />
       <Container
         fluid
         className="bg-secondary text-center"

@@ -3,26 +3,12 @@ import { Link } from "react-router-dom";
 import EStoreSummary from "../components/layout/EStoreSummary";
 import classes from './About.module.css';
 import EStoreFooter from "../components/layout/EStoreFooter";
+import MainHeaer from "../components/MainHeader";
 
 function AboutPage() {
   return (
     <>
-      <header>
-        <Navbar style={{backgroundColor:'black'}} expand="sm" variant="dark">
-          <Container>
-            <Link to="/" style={{color:'white'}}>HOME</Link>
-
-            <Link to="/store" style={{color:'white'}}>STORE</Link>
-
-            <Link to="/about" style={{color:'white'}}>ABOUT</Link>
-           
-                <Link to="/contactus" style={{ color: "white" }}>
-                  Contact Us
-                </Link>
-              
-          </Container>
-        </Navbar>
-      </header>
+     <MainHeaer />
       <EStoreSummary />
       <section id="about">
       <h2 className={classes.about}>ABOUT</h2>
