@@ -38,6 +38,11 @@ const MainHeaer = () => {
                 Contact Us
               </NavLink>
             </li>
+            <li>
+              <NavLink activeClassName={classes.active} to="/auth">
+                Login
+              </NavLink>
+            </li>
             <li style={{ marginLeft: "400px", textAlign: "rigth" }}>
               <HeaderCart onOpenCart={ShowCartHandler} />
             </li>

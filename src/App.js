@@ -8,6 +8,7 @@ import AboutPage from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import ProductsPage from "./pages/products/ProductsPage";
 import { Switch } from "react-router-dom/cjs/react-router-dom.min";
+import Login from "./pages/Login";
 
 // const router = createBrowserRouter([
 //   { path: "/", element: <HomePage /> },
@@ -36,6 +37,9 @@ const App = () => {
     </Route>
     <Route path='/store/:productId'>
       <ProductsPage/>
+    </Route>
+    <Route path='/auth'>
+<Login/>
     </Route>
     </Switch>
   </div>;
