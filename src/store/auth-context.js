@@ -2,21 +2,35 @@ import React, { useState } from "react";
 
 const AuthContext = React.createContext({
   token: "",
+  email: "",
   isLoggedIn: false,
+  setEmail: (email) => {},
+  removeEmail: () => {},
   login: (token) => {},
   logout: () => {},
 });
 
 export const AuthContextProvider = (props) => {
   const initialToken = localStorage.getItem("token");
+const initialEmail = localStorage.getItem('email')
 
+  const [email, setEmail] = useState(initialEmail);
   const [token, setToken] = useState(initialToken);
 
   const userIsLoggedIn = !!token;
-  const loginHandler = (token) => {
 
+  const setEmailhandler = (mailId) => {
+    let emailRead = mailId.replace('@','');
+   emailRead = emailRead.replace('.','');
+    localStorage.setItem('email',emailRead)
+    setEmail(mailId);
+  };
+  const removeEmailHandler = () => {
+    setEmail('');
+    localStorage.removeItem('email')
+  }
+  const loginHandler = (token) => {
     setToken(token);
-    console.log('hi')
     localStorage.setItem("token", token);
     setTimeout(() => {
       logoutHandler();
@@ -25,14 +39,17 @@ export const AuthContextProvider = (props) => {
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem('email');
   };
   const contextValue = {
     token: token,
+    email: email,
+    setEmail:setEmailhandler,
+    removeEmail:removeEmailHandler,
     isLoggedIn: userIsLoggedIn,
     login: loginHandler,
     logout: logoutHandler,
   };
-
   return (
     <AuthContext.Provider value={contextValue}>
       {props.children}

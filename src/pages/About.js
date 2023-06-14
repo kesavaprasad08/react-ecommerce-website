@@ -1,5 +1,4 @@
-import { Container, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import EStoreSummary from "../components/layout/EStoreSummary";
 import classes from './About.module.css';
 import EStoreFooter from "../components/layout/EStoreFooter";

@@ -13,11 +13,13 @@ const Cart = (props) => {
     <CartItem 
     key={elem.id}
     id={elem.id}
+    crId={elem.crId}
     imgUrl={elem.imgUrl}
     title={elem.title}
     price={elem.price}
     quantity={elem.quantity}
     />
+   
     
     
   ));

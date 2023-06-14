@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import { useContext } from "react";
-
 import AuthContext from "../store/auth-context";
 import classes from "./Login.module.css";
 
@@ -18,7 +18,6 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("pressed");
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC6162fYAqVJ71rywFM_ESGbzow3iitodo",
       {
@@ -47,11 +46,15 @@ const Login = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
+        let finalEmail =emailInputRef.current.value.replace('@','');
+        finalEmail = finalEmail.replace('.','');
+        authCtx.setEmail(finalEmail)
         history.replace("/store");
       })
       .catch((err) => {
         alert(err.message);
       });
+
   };
   return (
     <>

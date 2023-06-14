@@ -5,7 +5,8 @@ import CartContext from "../../store/cart-context";
 const CartItem = (elem) =>{
     const cartCntx = useContext(CartContext);
     const removeItemFromCart= () => {
-        cartCntx.removeItem(elem.id);
+      // console.log(elem)
+        cartCntx.removeItem(elem.crId);
     }
     return(
         <>
@@ -19,7 +20,7 @@ const CartItem = (elem) =>{
       </td>
       <td>
         <p
-          style={{ border: "solid", textAlign: "center", borderColor: "aqua" }}
+          style={{ border: "solid", textAlign: "center", borderColor: "aqua", color:"black" }}
         > 
           {elem.quantity}
         </p>

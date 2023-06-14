@@ -4,10 +4,6 @@ import Cart from "../components/Cart/Cart";
 import EStoreSummary from "../components/layout/EStoreSummary";
 import Items from "../components/items/Items";
 import EStoreFooter from "../components/layout/EStoreFooter";
-import { Container, NavLink, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import HeaderCart from "../components/Cart/HeaderCart";
-import classes from './Store.module.css'
 import MainHeaer from "../components/MainHeader";
 
 function StorePage(props) {
