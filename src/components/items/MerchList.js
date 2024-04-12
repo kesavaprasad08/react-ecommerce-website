@@ -17,31 +17,32 @@ const MerchList = (props) => {
   };
 
   return (
-
-    <Col md={{ span: 3, offset: 5 }} className="mt-3">
-      
-      <Col key={props.id}>
-      <Link to={`/store/${props.id}`}>
-        <h5>{props.title}</h5>
-        <img src={props.imageUrl} alt={props.title} width="200px" />
-        <Col md={{ span: 3, offset: 0 }}>
-          <span>
-            Rs.
-            <span>{props.price}</span>
-          </span>
-        </Col>
+    <Col style={{marginLeft:'100px', marginRight:'100px'}} className="mt-5">
+      {/* < key={props.id}> */}
+      <div style={{textAlign:'center'}}>
+        <Link to={`/store/${props.id}`}>
+          
+          <h5 >{props.title}</h5>
+          <img src={props.imageUrl} alt={props.title} width="200px" />
+          <Col>
+            <span>
+              Rs.
+              <span>{props.price}</span>
+            </span>
+          </Col>
         </Link>
-        <Col md={{ span: 7, offset: 2}}>
+        <Col>
           <Button
             variant="info"
             size="sm"
-            style={{ color: "white" }}
+            style={{ color: "white",marginBottom:'10px'}}
             onClick={addItemToCart}
           >
-            Add to Cart
+            ADD TO CART
           </Button>
+          
         </Col>
-      </Col>
+        </div>
     </Col>
   );
 };

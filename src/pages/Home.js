@@ -19,7 +19,7 @@ function HomePage() {
           style={{ fontSize: "129px", color: "white" }}
           className="text-center"
         >
-          The Generics
+          The Genericas
         </p>
         <Button
           variant="secondary"
@@ -41,6 +41,7 @@ function HomePage() {
           ►
         </Button>
       </Container>
+      
       <h1
         style={{
           textAlign: "center",
@@ -50,6 +51,7 @@ function HomePage() {
       >
         TOURS{" "}
       </h1>
+      <div style={{ marginLeft:'200px', marginRight:'100px'}}>
       <Table style={{ textAlign: "center", boxSizing: "border-box" }}>
         <tbody>
           <tr>
@@ -114,6 +116,7 @@ function HomePage() {
           </tr>
         </tbody>
       </Table>
+      </div>
 
       <EStoreFooter />
     </>

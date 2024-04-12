@@ -44,7 +44,7 @@ function StorePage(props) {
       {cartShown && <Cart onClose={HideCartHandler} />}
 
       <EStoreSummary />
-      <h1 className="text-center"> Merch</h1>
+      <h1 className="text-center" style={{fontFamily: "Metal Mania"}}> Merch</h1>
       <Items onOpen={ShowCartHandler} />
 
       <EStoreFooter />

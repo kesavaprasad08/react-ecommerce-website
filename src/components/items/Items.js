@@ -63,13 +63,15 @@ const items = (props) => {
   return (
     <Container>
       <Row>
-        <ul>{items}</ul>
+        {items}
       </Row>
+      <Row>
       <Col md={{ span: 3, offset: 5 }} className="mt-4">
         <Button onClick={props.onOpen} variant="secondary" style={{ color: "aqua" }} >
           See the Cart 
         </Button>
       </Col>
+      </Row>
     </Container>
   );
 };

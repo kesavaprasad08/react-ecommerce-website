@@ -2,9 +2,11 @@ import { Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import classes from "./MainHeader.module.css";
 import HeaderCart from "./Cart/HeaderCart";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Cart from "./Cart/Cart";
-const MainHeaer = () => {
+import AuthContext from "../store/auth-context";
+const MainHeader = () => {
+  const authCtx = useContext(AuthContext);
   const [cartShown, setCartIsShown] = useState(false);
   const ShowCartHandler = () => {
     setCartIsShown(true);
@@ -38,11 +40,12 @@ const MainHeaer = () => {
                 Contact Us
               </NavLink>
             </li>
-            <li>
+            {!authCtx.isLoggedIn && <li>
               <NavLink activeClassName={classes.active} to="/auth">
                 Login
               </NavLink>
-            </li>
+            </li> }
+           
             <li style={{ marginLeft: "400px", textAlign: "rigth" }}>
               <HeaderCart onOpenCart={ShowCartHandler} />
             </li>
@@ -55,4 +58,4 @@ const MainHeaer = () => {
   );
 };
 
-export default MainHeaer;
+export default MainHeader;

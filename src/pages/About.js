@@ -9,7 +9,7 @@ function AboutPage() {
     <>
      <MainHeaer />
       <EStoreSummary />
-      <section id="about">
+      <section id="about" style={{marginLeft:'200px',marginRight:'200px'}}>
       <h2 className={classes.about}>ABOUT</h2>
       <img
       
